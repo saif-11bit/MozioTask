@@ -28,7 +28,7 @@ class LocateProvider(views.APIView):
         lon = data.get('lon')
         lat = data.get('lat')
         if lon != None and lat != None:
-            coordinates = [float(lon),float(lat)]
+            coordinates = [float(lat),float(lon)]
             service_areas = ServiceArea.objects.filter(location__contains=coordinates)
             serializer = ServiceAreaSerializer(service_areas, many=True)       
             return Response({"data": serializer.data})

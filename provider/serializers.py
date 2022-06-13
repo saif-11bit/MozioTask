@@ -35,9 +35,3 @@ class ProviderSerializer(serializers.ModelSerializer):
         qs_ser = LocationSerializer(qs, many=True)
         
         return qs_ser.data
-        
-        
-# class LocateProviderSerializer(serializers.Serializer):
-#     lon = serializers.FloatField()
-#     lat = serializers.FloatField()
-
